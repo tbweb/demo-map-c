@@ -9,6 +9,7 @@ LIBDIR		= 	./libft/
 INCDIR		= 	./includes/
 
 SRC			=	main.c \
+                unity.c \
                 ft_new_map_data.c \
                 ft_put_map_data.c \
                 ft_put_map_data_in_list.c \
@@ -31,7 +32,7 @@ $(OBJDIR)%.o: $(SRCDIR)%.c
 $(NAMELIB):
 	@make -C $(LIBDIR)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) $(OBJSUNITY)
 	$(CC) -o $(NAME) $(INCLUDES) $(OBJS) $(LIBFT) $(CFLAGS)
 
 clean:

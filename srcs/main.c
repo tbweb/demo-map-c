@@ -1,3 +1,4 @@
+#include "unity.h"
 #include "map.h"
 
 static t_list *list_string;
@@ -12,26 +13,24 @@ int	test_show_elements()
 	return (1);
 }
 
-int	test_map_get()
+void	test_map_get()
 {
 	t_map_data	*map_data;
 
 	ft_putendl("GET IN MAP TESTS");
 	map_data = ft_map_get(list_string, "test3");
-	ft_put_map_data(map_data);
+	TEST_ASSERT_EQUAL_STRING(map_data->value, "content4");
 	map_data = ft_map_get(list_string, "test50");
-	ft_put_map_data(map_data);
+	TEST_ASSERT_EQUAL_STRING(map_data->value, "content50");
 	map_data = ft_map_get(list_string, "test99");
-	ft_put_map_data(map_data);
+	TEST_ASSERT_EQUAL_STRING(map_data->value, "content99");
 	map_data = ft_map_get(list_string, "test0");
-	ft_put_map_data(map_data);
-	return (1);
+	TEST_ASSERT_EQUAL_STRING(map_data->value, "content0");
 }
 
 int	main(void)
 {
 	setUp();
-	test_show_elements();
-	test_map_get();
+	RUN_TEST(test_map_get, 13);
 	return (0);
 }
