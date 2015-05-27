@@ -19,7 +19,8 @@ SRC			=	main.c \
                 ft_map_get.c \
                 ft_map_put.c \
                 ft_create_map_strings.c \
-                ft_create_map_ints.c
+                ft_create_map_ints.c \
+                ft_map_to_json.c
 
 INCLUDES	=	-I$(INCDIR)
 LIBFT		=	-L$(LIBDIR) -lft
