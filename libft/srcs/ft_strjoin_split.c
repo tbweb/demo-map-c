@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin_split.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: btournoi <btournoi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fle-mint <fle-mint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/16 14:29:05 by btournoi          #+#    #+#             */
-/*   Updated: 2015/02/16 14:29:05 by btournoi         ###   ########.fr       */
+/*   Created: 2014/03/27 15:34:02 by fle-mint          #+#    #+#             */
+/*   Updated: 2014/03/27 15:35:02 by fle-mint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ char	*ft_strjoin_split(char **tab, char *str)
 	int		size;
 	int		i;
 	char	*tmp;
+	char	*tmp2;
 
 	if (tab[0])
 	{
@@ -26,8 +27,11 @@ char	*ft_strjoin_split(char **tab, char *str)
 		tmp = tab[i];
 		while (i < (size - 1))
 		{
-			tmp = ft_strjoin(tmp, str);
-			tmp = ft_strjoin(tmp, tab[i + 1]);
+			tmp2 = ft_strjoin(tmp, str);
+			if (i)
+				free(tmp);
+			tmp = ft_strjoin(tmp2, tab[i + 1]);
+			free(tmp2);
 			i++;
 		}
 		if (size == 1)
