@@ -15,6 +15,7 @@ SRC			=	main.c \
                 ft_put_map_data.c \
                 ft_put_map_data_in_list.c \
                 ft_match_key_in_node_of_list.c \
+                ft_map_get_map_data.c \
                 ft_map_get.c \
                 ft_map_put.c \
                 ft_create_map_strings.c

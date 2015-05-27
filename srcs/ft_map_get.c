@@ -1,13 +1,13 @@
 #include "map.h"
 
-t_map_data	*ft_map_get(t_map *map, char *key)
+void	*ft_map_get(t_map *map, char *key)
 {
-	t_list	*elem;
+	t_map_data	*content;
 
-	elem = ft_lstsearch(&map->list, ft_match_key_in_node_of_list, key);
-	if (elem != NULL)
+	content = ft_map_get_map_data(map, key);
+	if (content != NULL)
 	{
-		return (elem->content);
+		return (content->value);
 	}
 	return NULL;
 }
