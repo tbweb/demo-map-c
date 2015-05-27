@@ -22,6 +22,7 @@ t_map	*ft_create_map_ints(void)
 		ft_strdel(&number);
 		map_data = ft_new_map_data(key, nb, "int *");
 		ft_lstadd(&map->list, ft_lstnew(map_data, 0));
+		ft_strdel(&key);
 		i++;
 	}
 	return (map);

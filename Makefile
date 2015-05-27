@@ -11,7 +11,9 @@ INCDIR		= 	./includes/
 SRC			=	main.c \
                 unity.c \
                 ft_new_map.c \
+                ft_map_del.c \
                 ft_new_map_data.c \
+                ft_del_map_data.c \
                 ft_put_map_data.c \
                 ft_put_map_data_in_list.c \
                 ft_match_key_in_node_of_list.c \

@@ -30,6 +30,7 @@ static char	*ft_create_key_value_json(t_map_data *map_data)
 		value = ft_create_key_string(map_data->value);
 		data = ft_strjoin(tmp, value);
 		ft_strdel(&key);
+		ft_strdel(&tmp);
 		ft_strdel(&value);
 	}
 	// else if (ft_strequ(map_data->type, "int *"))
@@ -37,7 +38,6 @@ static char	*ft_create_key_value_json(t_map_data *map_data)
 	// 	tmp = ft_strjoin(map_data->key, ":");
 	// 	data = ft_strjoin(tmp, map_data->value);
 	// }
-	ft_strdel(&tmp);
 	return (data);
 }
 
@@ -57,10 +57,10 @@ static char	*ft_create_object_json(t_list *data)
 		if (data->next != NULL)
 		{
 			str = ft_strjoin(tmp, ",");
-			ft_strdel(&tmp);
 		}
 		else
-			str = tmp;
+			str = ft_strdup(tmp);
+		ft_strdel(&tmp);
 		tmp = json;
 		json = ft_strjoin(json, str);
 		ft_strdel(&tmp);

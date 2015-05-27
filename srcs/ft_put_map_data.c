@@ -9,9 +9,9 @@ void	ft_put_map_data(t_map_data *map_data)
 	ft_putstr(", Value: ");
 	if (ft_strequ(map_data->type, "char *"))
 		ft_putendl((char *)map_data->value);
-	else if (ft_strequ(map_data->type, "int"))
+	else if (ft_strequ(map_data->type, "int *"))
 	{
-		ft_putnbr((int)map_data->value);
+		ft_putnbr(*((int *)map_data->value));
 		ft_putchar('\n');
 	}
 }

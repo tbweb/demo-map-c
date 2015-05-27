@@ -21,6 +21,7 @@ void	test_map_get_map_data_strings()
 	TEST_ASSERT_EQUAL_STRING(map_data->key, "test0");
 	TEST_ASSERT_EQUAL_STRING(map_data->value, "content0");
 	TEST_ASSERT_EQUAL_STRING(map_data->type, "char *");
+	ft_map_del(&map_strings);
 	//ft_lstiter(map_strings->list, ft_put_map_data_in_list);
 }
 
@@ -36,6 +37,7 @@ void	test_map_get_strings()
 	TEST_ASSERT_EQUAL_STRING(value, "content99");
 	value = ft_map_get(map_strings, "test0");
 	TEST_ASSERT_EQUAL_STRING(value, "content0");
+	ft_map_del(&map_strings);
 }
 
 void	test_map_put_strings()
@@ -53,6 +55,7 @@ void	test_map_put_strings()
 	TEST_ASSERT_EQUAL_STRING(map_data->key, "test101");
 	TEST_ASSERT_EQUAL_STRING(map_data->value, "content101");
 	TEST_ASSERT_EQUAL_STRING(map_data->type, "char *");
+	ft_map_del(&map_strings_for_put);
 }
 
 void	test_map_put_ints()
@@ -77,6 +80,7 @@ void	test_map_put_ints()
 	TEST_ASSERT_EQUAL_STRING(map_data->key, "test101");
 	TEST_ASSERT_EQUAL_INT(*value, 101);
 	TEST_ASSERT_EQUAL_STRING(map_data->type, "int *");
+	ft_map_del(&map_ints_for_put);
 }
 
 void	test_map_strings_to_json()
@@ -86,6 +90,7 @@ void	test_map_strings_to_json()
 	
 	map_strings = ft_create_map_strings();
 	json = ft_map_to_json(map_strings);
+	//ft_map_del(&map_strings);
 	ft_putendl(json);
 	ft_strdel(&json);
 	sleep(10);
