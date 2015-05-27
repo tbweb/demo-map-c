@@ -18,7 +18,8 @@ SRC			=	main.c \
                 ft_map_get_map_data.c \
                 ft_map_get.c \
                 ft_map_put.c \
-                ft_create_map_strings.c
+                ft_create_map_strings.c \
+                ft_create_map_ints.c
 
 INCLUDES	=	-I$(INCDIR)
 LIBFT		=	-L$(LIBDIR) -lft
