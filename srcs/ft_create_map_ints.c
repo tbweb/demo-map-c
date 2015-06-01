@@ -20,9 +20,10 @@ t_map	*ft_create_map_ints(void)
 		number = ft_itoa(i);
 		key = ft_strjoin("test", number);
 		ft_strdel(&number);
-		map_data = ft_new_map_data(key, nb, "int *");
+		map_data = ft_new_map_data(key, nb, sizeof(int), "int *");
 		ft_lstadd(&map->list, ft_lstnew(map_data, 0));
 		ft_strdel(&key);
+		free(nb);
 		i++;
 	}
 	return (map);

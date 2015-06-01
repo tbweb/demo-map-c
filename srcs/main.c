@@ -1,4 +1,3 @@
-#include <unistd.h>
 #include "unity.h"
 #include "map.h"
 #include "json.h"
@@ -47,8 +46,8 @@ void	test_map_put_strings()
 	t_map		*map_strings_for_put;
 
 	map_strings_for_put = ft_new_map();
-	ft_map_put(map_strings_for_put, "test100", "content100", "char *");
-	ft_map_put(map_strings_for_put, "test101", "content101", "char *");
+	ft_map_put(map_strings_for_put, "test100", "content100", 11, "char *");
+	ft_map_put(map_strings_for_put, "test101", "content101", 11, "char *");
 	value = ft_map_get(map_strings_for_put, "test100");
 	TEST_ASSERT_EQUAL_STRING(value, "content100");
 	map_data = ft_map_get_map_data(map_strings_for_put, "test101");
@@ -69,8 +68,8 @@ void	test_map_put_ints()
 	number1 = 100;
 	number2 = 101;
 	map_ints_for_put = ft_create_map_ints();
-	ft_map_put(map_ints_for_put, "test100", &number1, "int *");
-	ft_map_put(map_ints_for_put, "test101", &number2, "int *");
+	ft_map_put(map_ints_for_put, "test100", &number1, sizeof(int), "int *");
+	ft_map_put(map_ints_for_put, "test101", &number2, sizeof(int), "int *");
 	value = (int *)ft_map_get(map_ints_for_put, "test50");
 	TEST_ASSERT_EQUAL_INT(*value, 50);
 	value = (int *)ft_map_get(map_ints_for_put, "test100");
@@ -90,18 +89,17 @@ void	test_map_strings_to_json()
 	
 	map_strings = ft_create_map_strings();
 	json = ft_map_to_json(map_strings);
-	//ft_map_del(&map_strings);
 	ft_putendl(json);
 	ft_strdel(&json);
-	sleep(10);
+	ft_map_del(&map_strings);
 }
 
 int	main(void)
 {
-	RUN_TEST(test_map_get_map_data_strings, 4);
-	RUN_TEST(test_map_get_strings, 25);
-	RUN_TEST(test_map_put_strings, 40);
-	RUN_TEST(test_map_put_ints, 56);
-	RUN_TEST(test_map_strings_to_json, 81);
+	RUN_TEST(test_map_get_map_data_strings, 5);
+	RUN_TEST(test_map_get_strings, 27);
+	RUN_TEST(test_map_put_strings, 42);
+	RUN_TEST(test_map_put_ints, 60);
+	RUN_TEST(test_map_strings_to_json, 85);
 	return (0);
 }

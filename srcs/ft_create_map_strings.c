@@ -17,9 +17,10 @@ t_map	*ft_create_map_strings(void)
 		content = ft_strjoin("content", number);
 		key = ft_strjoin("test", number);
 		ft_strdel(&number);
-		map_data = ft_new_map_data(key, content, "char *");
+		map_data = ft_new_map_data(key, content, ft_strlen(content) + 1, "char *");
 		ft_lstadd(&map->list, ft_lstnew(map_data, 0));
 		ft_strdel(&key);
+		ft_strdel(&content);
 		i++;
 	}
 	return (map);
