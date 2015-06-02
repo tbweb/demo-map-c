@@ -9,5 +9,5 @@ void	*ft_map_get(t_map *map, char *key)
 	{
 		return (content->value);
 	}
-	return NULL;
+	return (NULL);
 }

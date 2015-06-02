@@ -1,6 +1,7 @@
 #include "map.h"
 
-t_map_data	*ft_new_map_data(char *key, void *value, size_t value_size, char *type)
+t_map_data	*ft_new_map_data(char *key, void *value, size_t value_size,
+	char *type)
 {
 	t_map_data	*map_data;
 

@@ -28,8 +28,4 @@ void		*ft_map_get(t_map *map, char *key);
 void		ft_map_put(t_map *map, char *key, void *value, size_t value_size, char *type);
 void		ft_map_del(t_map **map);
 
-/*TEST*/
-t_map		*ft_create_map_strings(void);
-t_map		*ft_create_map_ints(void);
-
 #endif

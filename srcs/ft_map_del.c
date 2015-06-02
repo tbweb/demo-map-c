@@ -7,6 +7,5 @@ void	ft_map_del(t_map **map)
 		ft_lstdel(&(*map)->list, ft_del_map_data);
 		free(*map);
 	}
-
 	*map = NULL;
 }

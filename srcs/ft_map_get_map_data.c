@@ -9,5 +9,5 @@ t_map_data	*ft_map_get_map_data(t_map *map, char *key)
 	{
 		return (elem->content);
 	}
-	return NULL;
+	return (NULL);
 }

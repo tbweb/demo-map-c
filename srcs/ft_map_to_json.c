@@ -22,27 +22,21 @@ static char	*ft_create_key_value_json(t_map_data *map_data)
 	char	*data;
 	char	*value;
 
-	tmp = NULL;
-	data = NULL;
+	value = "null";
+	key = ft_create_key_string(map_data->key);
+	tmp = ft_strjoin(key, ":");
 	if (ft_strequ(map_data->type, "char *"))
-	{
-		key = ft_create_key_string(map_data->key);
-		tmp = ft_strjoin(key, ":");
 		value = ft_create_key_string(map_data->value);
-		data = ft_strjoin(tmp, value);
-		ft_strdel(&key);
-		ft_strdel(&tmp);
-		ft_strdel(&value);
-	}
 	else if (ft_strequ(map_data->type, "int *"))
-	{
-		char	*str;
-
-		str = ft_itoa(*((int *)map_data->value));
-	 	tmp = ft_strjoin(map_data->key, ":");
-	 	data = ft_strjoin(tmp, str);
-	 	ft_strdel(&str);
-	}
+		value = ft_itoa(*((int *)map_data->value));
+	else if (ft_strequ(map_data->type, "t_map *"))
+		value = ft_map_to_json((t_map *)map_data->value);
+	else if (ft_strequ(map_data->type, "t_list *"))
+		value = ft_list_of_map_to_json((t_list *)map_data->value);
+	data = ft_strjoin(tmp, value);
+	ft_strdel(&value);
+	ft_strdel(&key);
+	ft_strdel(&tmp);
 	return (data);
 }
 
@@ -87,12 +81,28 @@ static char	*ft_create_object_json(t_list *data)
 	return (str);
 }
 
-char	*ft_map_to_json(t_map *map)
+char		*ft_list_of_map_to_json(t_list *list_of_map)
+{
+	char	*tmp;
+	char	*ret;
+	char	*json;
+
+	json = NULL;
+	while (list_of_map)
+	{
+		tmp = json;
+		ret = ft_map_to_json((t_map *)list_of_map->content);
+		json = ft_strjoin(json, ret);
+		list_of_map = list_of_map->next;
+		ft_strdel(&tmp);
+	}
+	return (json);
+}
+
+char		*ft_map_to_json(t_map *map)
 {
 	char	*json;
-	t_list	*data;
 
-	data = map->list;
-	json = ft_create_object_json(data);
+	json = ft_create_object_json(map->list);
 	return (json);
 }

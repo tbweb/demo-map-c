@@ -1,8 +1,8 @@
 #include "tests.h"
 
-static void	test_map_get_map_data_strings()
+static void	test_map_get_map_data_strings(void)
 {
-	t_map *map_strings;
+	t_map		*map_strings;
 	t_map_data	*map_data;
 
 	map_strings = ft_create_map_strings();
@@ -19,12 +19,11 @@ static void	test_map_get_map_data_strings()
 	TEST_ASSERT_EQUAL_STRING(map_data->value, "content0");
 	TEST_ASSERT_EQUAL_STRING(map_data->type, "char *");
 	ft_map_del(&map_strings);
-	//ft_lstiter(map_strings->list, ft_put_map_data_in_list);
 }
 
-static void	test_map_get_strings()
+static void	test_map_get_strings(void)
 {
-	t_map *map_strings;
+	t_map	*map_strings;
 	void	*value;
 
 	map_strings = ft_create_map_strings();
@@ -37,7 +36,7 @@ static void	test_map_get_strings()
 	ft_map_del(&map_strings);
 }
 
-static void	test_map_put_strings()
+static void	test_map_put_strings(void)
 {
 	t_map_data	*map_data;
 	void		*value;
@@ -55,11 +54,11 @@ static void	test_map_put_strings()
 	ft_map_del(&map_strings_for_put);
 }
 
-static void	test_map_strings_to_json()
+static void	test_map_strings_to_json(void)
 {
 	char	*json;
 	t_map	*map_strings;
-	
+
 	map_strings = ft_create_map_strings();
 	json = ft_map_to_json(map_strings);
 	ft_putendl(json);
@@ -67,7 +66,7 @@ static void	test_map_strings_to_json()
 	ft_map_del(&map_strings);
 }
 
-void	tests_strings(void)
+void		tests_strings(void)
 {
 	RUN_TEST(test_map_get_map_data_strings, 5);
 	RUN_TEST(test_map_get_strings, 27);
