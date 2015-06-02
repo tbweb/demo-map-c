@@ -1,6 +1,6 @@
 #include "tests.h"
 
-t_list		*ft_create_list_strings()
+t_list		*ft_create_list_strings(void)
 {
 	int		i;
 	char	*str;

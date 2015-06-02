@@ -24,7 +24,7 @@ t_map		*ft_create_map_strings(void)
 
 	i = 0;
 	map = ft_new_map();
-	while (i < 100)
+	while (i < 5)
 	{
 		ft_add_elem_to_map(map, i);
 		i++;

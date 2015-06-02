@@ -12,9 +12,12 @@ SRC			=	main.c \
 				tests_strings.c \
 				tests_ints.c \
 				tests_maps.c \
+				tests_lists_maps.c \
                 ft_create_map_strings.c \
                 ft_create_map_ints.c \
                 ft_create_map_maps.c \
+                ft_create_map_lists_maps.c \
+                ft_create_list_maps.c \
                 ft_create_list_strings.c \
                 unity.c \
                 ft_new_map.c \

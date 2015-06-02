@@ -68,8 +68,8 @@ static void	test_map_strings_to_json(void)
 
 void		tests_strings(void)
 {
-	RUN_TEST(test_map_get_map_data_strings, 5);
-	RUN_TEST(test_map_get_strings, 27);
-	RUN_TEST(test_map_put_strings, 42);
-	RUN_TEST(test_map_strings_to_json, 60);
+	RUN_TEST(test_map_get_map_data_strings, 3);
+	RUN_TEST(test_map_get_strings, 24);
+	RUN_TEST(test_map_put_strings, 39);
+	RUN_TEST(test_map_strings_to_json, 57);
 }
