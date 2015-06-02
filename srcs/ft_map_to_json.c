@@ -34,11 +34,15 @@ static char	*ft_create_key_value_json(t_map_data *map_data)
 		ft_strdel(&tmp);
 		ft_strdel(&value);
 	}
-	// else if (ft_strequ(map_data->type, "int *"))
-	// {
-	// 	tmp = ft_strjoin(map_data->key, ":");
-	// 	data = ft_strjoin(tmp, map_data->value);
-	// }
+	else if (ft_strequ(map_data->type, "int *"))
+	{
+		char	*str;
+
+		str = ft_itoa(*((int *)map_data->value));
+	 	tmp = ft_strjoin(map_data->key, ":");
+	 	data = ft_strjoin(tmp, str);
+	 	ft_strdel(&str);
+	}
 	return (data);
 }
 

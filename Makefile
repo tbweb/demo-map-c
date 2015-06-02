@@ -9,6 +9,8 @@ LIBDIR		= 	./libft/
 INCDIR		= 	./includes/
 
 SRC			=	main.c \
+				tests_strings.c \
+				tests_ints.c \
                 unity.c \
                 ft_new_map.c \
                 ft_map_del.c \
