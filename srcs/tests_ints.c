@@ -11,8 +11,8 @@ static void	test_map_put_ints(void)
 	number1 = 100;
 	number2 = 101;
 	map_ints_for_put = ft_create_map_ints(100);
-	ft_map_put(map_ints_for_put, "test100", &number1, sizeof(int), "int *");
-	ft_map_put(map_ints_for_put, "test101", &number2, sizeof(int), "int *");
+	ft_map_put(map_ints_for_put, "test100", &number1, sizeof(int *), "int *");
+	ft_map_put(map_ints_for_put, "test101", &number2, sizeof(int *), "int *");
 	value = (int *)ft_map_get(map_ints_for_put, "test50");
 	TEST_ASSERT_EQUAL_INT(*value, 50);
 	value = (int *)ft_map_get(map_ints_for_put, "test100");

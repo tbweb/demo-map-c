@@ -12,7 +12,7 @@ t_map_data	*ft_new_map_data(char *key, void *value, size_t value_size,
 	map_data->type = ft_strdup(type);
 	if (value_size > 0 && value != NULL)
 	{
-		map_data->value = (void *)malloc(sizeof(void *) * value_size);
+		map_data->value = (void *)malloc(value_size);
 		if (!map_data->value)
 			return (NULL);
 		ft_memcpy(map_data->value, value, value_size);

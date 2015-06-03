@@ -4,13 +4,11 @@ static void	ft_add_elem_to_map(t_map *map, int *nb)
 {
 	char		*key;
 	char		*number;
-	t_map_data	*map_data;
 
 	number = ft_itoa(*nb);
 	key = ft_strjoin("test", number);
 	ft_strdel(&number);
-	map_data = ft_new_map_data(key, nb, sizeof(int), "int *");
-	ft_lstadd(&map->list, ft_lstnew(map_data, 0));
+	ft_map_put_pointer_to_int(map, key, nb);
 	ft_strdel(&key);
 }
 

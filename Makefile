@@ -13,23 +13,27 @@ SRC			=	main.c \
 				tests_ints.c \
 				tests_maps.c \
 				tests_lists_maps.c \
-                ft_create_map_strings.c \
-                ft_create_map_ints.c \
-                ft_create_map_maps.c \
-                ft_create_map_lists_maps.c \
                 ft_create_list_maps.c \
                 ft_create_list_strings.c \
+                ft_create_map_ints.c \
+                ft_create_map_maps.c \
+                ft_create_map_strings.c \
+                ft_create_map_lists_maps.c \
                 unity.c \
                 ft_new_map.c \
                 ft_map_del.c \
                 ft_new_map_data.c \
                 ft_del_map_data.c \
                 ft_put_map_data.c \
+                ft_map_get_map_data.c \
                 ft_put_map_data_in_list.c \
                 ft_match_key_in_node_of_list.c \
-                ft_map_get_map_data.c \
                 ft_map_get.c \
                 ft_map_put.c \
+                ft_map_put_map.c \
+                ft_map_put_list.c \
+                ft_map_put_string.c \
+                ft_map_put_pointer_on_int.c \
                 ft_map_to_json.c \
                 ft_list_of_map_to_json.c \
 
