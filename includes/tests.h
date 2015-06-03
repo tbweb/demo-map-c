@@ -4,10 +4,10 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include "../libft/includes/libft.h"
+# include "../libmap/includes/map.h"
+# include "../libjson/includes/json.h"
 
-#include "unity.h"
-#include "map.h"
-#include "json.h"
+# include "unity.h"
 
 void	tests_strings(void);
 void	tests_ints(void);
