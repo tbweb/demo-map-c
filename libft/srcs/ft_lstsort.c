@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstsort.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: taudeguy <taudeguy@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/06/02 22:44:36 by taudeguy          #+#    #+#             */
+/*   Updated: 2015/06/02 22:44:51 by taudeguy         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static void	swap_elem(t_list *elem1, t_list *elem2)
+static void		swap_elem(t_list *elem1, t_list *elem2)
 {
 	void	*tmp;
 	int		tmpcontent_size;
@@ -16,7 +28,7 @@ static void	swap_elem(t_list *elem1, t_list *elem2)
 	}
 }
 
-void	ft_lstsort(t_list **lst, int (*f)(t_list *, t_list *))
+void			ft_lstsort(t_list **lst, int (*f)(t_list *, t_list *))
 {
 	int		sort;
 	t_list	*tmp;

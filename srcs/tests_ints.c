@@ -10,7 +10,7 @@ static void	test_map_put_ints(void)
 
 	number1 = 100;
 	number2 = 101;
-	map_ints_for_put = ft_create_map_ints();
+	map_ints_for_put = ft_create_map_ints(100);
 	ft_map_put(map_ints_for_put, "test100", &number1, sizeof(int), "int *");
 	ft_map_put(map_ints_for_put, "test101", &number2, sizeof(int), "int *");
 	value = (int *)ft_map_get(map_ints_for_put, "test50");
@@ -30,7 +30,7 @@ static void	test_map_ints_to_json(void)
 	char	*json;
 	t_map	*maps_ints;
 
-	maps_ints = ft_create_map_ints();
+	maps_ints = ft_create_map_ints(10);
 	json = ft_map_to_json(maps_ints);
 	ft_putendl(json);
 	ft_strdel(&json);

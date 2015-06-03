@@ -14,8 +14,8 @@ void	tests_ints(void);
 void	tests_maps(void);
 void	tests_lists_maps(void);
 
-t_map		*ft_create_map_strings(void);
-t_map		*ft_create_map_ints(void);
+t_map		*ft_create_map_strings(size_t number_of_string);
+t_map		*ft_create_map_ints(size_t number_of_ints);
 t_map		*ft_create_map_maps(void);
 t_map		*ft_create_map_lists_maps(void);
 t_list		*ft_create_list_maps(void);

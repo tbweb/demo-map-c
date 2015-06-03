@@ -14,15 +14,15 @@ static void	ft_add_elem_to_map(t_map *map, int *nb)
 	ft_strdel(&key);
 }
 
-t_map		*ft_create_map_ints(void)
+t_map		*ft_create_map_ints(size_t number_of_ints)
 {
-	int			i;
+	size_t		i;
 	int			*nb;
 	t_map		*map;
 
 	i = 0;
 	map = ft_new_map();
-	while (i < 100)
+	while (i < number_of_ints)
 	{
 		nb = (int *)malloc(sizeof(int));
 		if (nb == NULL)

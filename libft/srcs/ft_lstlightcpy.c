@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstlightcpy.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: taudeguy <taudeguy@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/06/02 22:42:19 by taudeguy          #+#    #+#             */
+/*   Updated: 2015/06/02 22:42:57 by taudeguy         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 void	ft_lstlightcpy(t_list **lst, t_list **out)
@@ -8,10 +20,8 @@ void	ft_lstlightcpy(t_list **lst, t_list **out)
 	tmp = *lst;
 	while (tmp)
 	{
-		elem =  ft_lstnew(tmp->content, 0);
+		elem = ft_lstnew(tmp->content, 0);
 		ft_lstadd(out, elem);
 		tmp = tmp->next;
 	}
 }
-
-

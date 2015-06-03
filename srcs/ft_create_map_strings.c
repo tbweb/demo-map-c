@@ -17,14 +17,14 @@ static void	ft_add_elem_to_map(t_map *map, int i)
 	ft_strdel(&key);
 }
 
-t_map		*ft_create_map_strings(void)
+t_map		*ft_create_map_strings(size_t number_of_string)
 {
-	int			i;
+	size_t		i;
 	t_map		*map;
 
 	i = 0;
 	map = ft_new_map();
-	while (i < 5)
+	while (i < number_of_string)
 	{
 		ft_add_elem_to_map(map, i);
 		i++;

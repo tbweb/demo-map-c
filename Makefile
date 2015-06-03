@@ -30,7 +30,8 @@ SRC			=	main.c \
                 ft_map_get_map_data.c \
                 ft_map_get.c \
                 ft_map_put.c \
-                ft_map_to_json.c
+                ft_map_to_json.c \
+                ft_list_of_map_to_json.c \
 
 INCLUDES	=	-I$(INCDIR)
 LIBFT		=	-L$(LIBDIR) -lft

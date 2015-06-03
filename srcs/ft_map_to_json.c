@@ -1,4 +1,3 @@
-#include <unistd.h>
 #include "json.h"
 
 static char	*ft_create_key_string(char *key)
@@ -79,24 +78,6 @@ static char	*ft_create_object_json(t_list *data)
 	str = ft_create_object_with_jsonstr(json);
 	ft_strdel(&json);
 	return (str);
-}
-
-char		*ft_list_of_map_to_json(t_list *list_of_map)
-{
-	char	*tmp;
-	char	*ret;
-	char	*json;
-
-	json = NULL;
-	while (list_of_map)
-	{
-		tmp = json;
-		ret = ft_map_to_json((t_map *)list_of_map->content);
-		json = ft_strjoin(json, ret);
-		list_of_map = list_of_map->next;
-		ft_strdel(&tmp);
-	}
-	return (json);
 }
 
 char		*ft_map_to_json(t_map *map)

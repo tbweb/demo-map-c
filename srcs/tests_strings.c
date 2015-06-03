@@ -5,7 +5,7 @@ static void	test_map_get_map_data_strings(void)
 	t_map		*map_strings;
 	t_map_data	*map_data;
 
-	map_strings = ft_create_map_strings();
+	map_strings = ft_create_map_strings(100);
 	map_data = ft_map_get_map_data(map_strings, "test50");
 	TEST_ASSERT_EQUAL_STRING(map_data->key, "test50");
 	TEST_ASSERT_EQUAL_STRING(map_data->value, "content50");
@@ -26,7 +26,7 @@ static void	test_map_get_strings(void)
 	t_map	*map_strings;
 	void	*value;
 
-	map_strings = ft_create_map_strings();
+	map_strings = ft_create_map_strings(100);
 	value = ft_map_get(map_strings, "test50");
 	TEST_ASSERT_EQUAL_STRING(value, "content50");
 	value = ft_map_get(map_strings, "test99");
@@ -59,7 +59,7 @@ static void	test_map_strings_to_json(void)
 	char	*json;
 	t_map	*map_strings;
 
-	map_strings = ft_create_map_strings();
+	map_strings = ft_create_map_strings(20);
 	json = ft_map_to_json(map_strings);
 	ft_putendl(json);
 	ft_strdel(&json);

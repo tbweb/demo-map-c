@@ -11,7 +11,6 @@ static void	ft_add_elem_to_map(t_map *map, int i, t_map *maps)
 	map_data = ft_new_map_data(key, maps, sizeof(t_map), "t_map *");
 	ft_lstadd(&map->list, ft_lstnew(map_data, 0));
 	ft_strdel(&key);
-	free(maps);
 }
 
 t_map		*ft_create_map_maps(void)
@@ -24,7 +23,7 @@ t_map		*ft_create_map_maps(void)
 	map = ft_new_map();
 	while (i < 2)
 	{
-		submap = ft_create_map_strings();
+		submap = ft_create_map_strings(5);
 		if (submap == NULL)
 			return (map);
 		ft_add_elem_to_map(map, i, submap);
