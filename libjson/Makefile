@@ -36,15 +36,15 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@ar rc $(NAME) $(OBJS)
 	@ranlib $(NAME)
-	@echo "Libmap created"
+	@echo "Libjson created"
 
 clean:
 	@/bin/rm -f $(OBJS)
-	@echo ".o file libjson delete"
+	@echo ".o file Libjson delete"
 
 fclean: clean
 	@/bin/rm -f $(NAME)
-	@echo "Binary libjson delete"
+	@echo "Binary Libjson delete"
 
 
 re: fclean all

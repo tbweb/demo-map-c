@@ -13,6 +13,7 @@ void	tests_strings(void);
 void	tests_ints(void);
 void	tests_maps(void);
 void	tests_lists_maps(void);
+void	tests_map_all(void);
 
 t_map		*ft_create_map_strings(size_t number_of_string);
 t_map		*ft_create_map_ints(size_t number_of_ints);

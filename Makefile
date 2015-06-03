@@ -17,6 +17,7 @@ SRC			=	main.c \
 				tests_ints.c \
 				tests_maps.c \
 				tests_lists_maps.c \
+				tests_map_all.c \
                 ft_create_list_maps.c \
                 ft_create_list_strings.c \
                 ft_create_map_ints.c \
