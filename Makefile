@@ -34,7 +34,7 @@ CFLAGS		=	-Wall -Wextra -Werror -g $(INCLUDES)
 
 OBJS		=	$(patsubst %.c,$(OBJDIR)%.o,$(SRC))
 
-all: $(NAMELIB) $(NAMELIBMAP) $(NAMELIBJSON) $(NAME) $(NAMECLI)
+all: $(NAMELIB) $(NAMELIBMAP) $(NAMELIBJSON) $(NAME)
 
 $(OBJDIR)%.o: $(SRCDIR)%.c
 	@mkdir -p $(OBJDIR)
