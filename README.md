@@ -1,7 +1,7 @@
 # demo-map-c
 Petite map en C pour mieux gérer des données clé / valeur dans des listes
 
-Le dossier lib map peut être copié facilement dans votre projet.
+Le dossier libmap peut être copié facilement dans votre projet.
 
 Le Makefile de votre projet contenir une règle qui execute cette commande pour compiler la lib : @make -C ./libmap/
 
@@ -11,7 +11,9 @@ Le fichier de lib se nomme : libmap.a
 
 Une structure map contient une liste toute simple pour le moment, une 
 optimisation sera faite plus tard pour optimiser la rapidité 
-de recherche dans la map. Voici la structure :
+de recherche dans la map.
+
+**Voici la structure de notre t_map**
 ```
 typedef struct		s_map
 {
@@ -29,7 +31,7 @@ typedef struct		s_map
 * ajouter une map avec une clé associé dans une map : `void	ft_map_put_map(t_map *map, char *key, t_map *value)`
 * ajouter une list avec une clé associé dans une map : `void	ft_map_put_list(t_map *map, char *key, t_list *value)`
 
-**Récupération d'un élément
+**Récupération d'un élément**
 * récupération de la value d'un élément dans une map en donnant sa clé associé : `void	*ft_map_get(t_map *map, char *key)`
 * récupération d'une t_map_data d'un élément dans une map en donnant sa clé associé : `t_map_data	*ft_map_get_map_data(t_map *map, char *key)`
 
